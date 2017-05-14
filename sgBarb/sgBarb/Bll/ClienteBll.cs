@@ -6,7 +6,7 @@ using System.Web;
 
 namespace sgBarb.Bll
 {
-    public class ClienteBll
+    public class ClienteBLL
     {
         public void insert(Model.Cliente cliente)
         {

@@ -10,7 +10,7 @@
 namespace sgBarb.View {
     
     
-    public partial class cadastroCliente {
+    public partial class cadastroCidade {
         
         /// <summary>
         /// txtNome control.
@@ -22,30 +22,39 @@ namespace sgBarb.View {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// ddlGenero control.
+        /// txtUF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
+        protected global::System.Web.UI.WebControls.TextBox txtUF;
         
         /// <summary>
-        /// txtTelefone control.
+        /// txtCep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        protected global::System.Web.UI.WebControls.TextBox txtCep;
         
         /// <summary>
-        /// txtCelular control.
+        /// btnCadastrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCelular;
+        protected global::System.Web.UI.WebControls.Button btnCadastrar;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

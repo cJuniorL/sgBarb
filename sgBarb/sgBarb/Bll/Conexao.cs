@@ -12,7 +12,7 @@ namespace sgBarb.Bll
 
         public Conexao()
         {
-            this.connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=sRpg;Integrated Security=True");
+            this.connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=sgBarb;Integrated Security=True");
             connection.Open();
         }
 

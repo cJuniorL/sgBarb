@@ -5,8 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Oi eu sou o goku</title>
+    <title>Barbearia</title>
     <link href="../Scripts/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         body {
             padding-top: 5rem;
