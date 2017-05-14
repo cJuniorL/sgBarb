@@ -97,7 +97,9 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
+    <Content Include="View\cabecalho.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -107,16 +109,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\Index.aspx" />
+    <Content Include="View\indexSite.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\cabecalho.Master.cs">
+      <DependentUpon>cabecalho.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\cabecalho.Master.designer.cs">
+      <DependentUpon>cabecalho.Master</DependentUpon>
+    </Compile>
     <Compile Include="View\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\indexSite.aspx.cs">
+      <DependentUpon>indexSite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\indexSite.aspx.designer.cs">
+      <DependentUpon>indexSite.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
