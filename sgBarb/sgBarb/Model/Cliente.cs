@@ -11,15 +11,13 @@ namespace sgBarb.Model
 
         public string nome { get; set; }
 
-        public bool  sexo { get; set; }
+        public bool  sexo { get; set; } //True = .|. ~ False = (|)
 
         public string telefone { get; set; }
 
         public string celular { get; set; }
 
         public DateTime nascimento { get; set; }
-
-        public int cidadeID { get; set; }
 
         public string cep { get; set; }
 
@@ -28,8 +26,6 @@ namespace sgBarb.Model
         public string bairro { get; set; }
 
         public int num { get; set; }
-
-        public string complemento { get; set; }
 
         public string cpf { get; set; }
 
@@ -40,5 +36,8 @@ namespace sgBarb.Model
         public float credito { get; set; }
 
         public string observacao { get; set; }
+
+        public int cidadeID { get; set; }
+
     }
 }

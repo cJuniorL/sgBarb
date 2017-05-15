@@ -18,7 +18,10 @@ namespace sgBarb.View
         {
             int? id = Dal.UsuarioDAL.selectByNomeSenha(txtUsuario.Text, txtSenha.Text);
             if (id != null)
+            {
+                Session["id"] = id;
                 Response.Redirect("indexSite.aspx");
+            }
             else
             {
                 txtSenha.CssClass = "form-control form-control-danger";

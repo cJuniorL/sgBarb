@@ -10,7 +10,7 @@ namespace sgBarb.Bll
     {
         public void insert(Model.Cliente cliente)
         {
-            string sql = "INSERT INTO CLIENTE VALUES (@nome, @sexo, @telefone, @celular, @nascimento, @cidadeID, @cep,  @bairro, @rua, @num, @complemento, @cpf, @rg, @email, @credito, @observacao)";
+            string sql = "INSERT INTO CLIENTE VALUES (@nome, @sexo, @telefone, @celular, @nascimento, @cep,  @bairro, @rua, @num, @cpf, @rg, @email, @credito, @observacao, @cidadeID)";
             Conexao conexao = new Bll.Conexao();
             SqlCommand command = new SqlCommand(sql, conexao.getConexao());
             commandAdd(command, cliente);
@@ -57,17 +57,16 @@ namespace sgBarb.Bll
             cliente.telefone = Convert.ToString(reader["telefone"]);
             cliente.celular = Convert.ToString(reader["celular"]);
             cliente.nascimento = Convert.ToDateTime(reader["nascimento"]);
-            cliente.cidadeID = Convert.ToInt32(reader["cidadeID"]);
             cliente.cep = Convert.ToString(reader["cep"]);
             cliente.rua = Convert.ToString(reader["rua"]);
             cliente.bairro = Convert.ToString(reader["bairro"]);
             cliente.num = Convert.ToInt32(reader["num"]);
-            cliente.complemento = Convert.ToString(reader["complemento"]);
             cliente.cpf = Convert.ToString(reader["cpf"]);
             cliente.rg = Convert.ToString(reader["rg"]);
             cliente.email = Convert.ToString(reader["email"]);
             cliente.credito = Convert.ToInt32(reader["credito"]);
             cliente.observacao = Convert.ToString(reader["observacao"]);
+            cliente.cidadeID = Convert.ToInt32(reader["cidadeID"]);
             return cliente;
         }
 
@@ -78,17 +77,16 @@ namespace sgBarb.Bll
             command.Parameters.AddWithValue("telefone", cliente.telefone);
             command.Parameters.AddWithValue("celular", cliente.celular);
             command.Parameters.AddWithValue("nascimento", cliente.nascimento);
-            command.Parameters.AddWithValue("cidadeID", cliente.cidadeID);
             command.Parameters.AddWithValue("cep", cliente.cep);
             command.Parameters.AddWithValue("bairro", cliente.bairro);
             command.Parameters.AddWithValue("rua", cliente.rua);
             command.Parameters.AddWithValue("num", cliente.num);
-            command.Parameters.AddWithValue("complemento", cliente.complemento);
             command.Parameters.AddWithValue("cpf", cliente.cpf);
             command.Parameters.AddWithValue("rg", cliente.rg);
             command.Parameters.AddWithValue("email", cliente.email);
             command.Parameters.AddWithValue("credito", cliente.credito);
             command.Parameters.AddWithValue("observacao", cliente.observacao);
+            command.Parameters.AddWithValue("cidadeID", cliente.cidadeID);
         }
     }
 }

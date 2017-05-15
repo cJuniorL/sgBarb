@@ -12,5 +12,11 @@ namespace sgBarb.Dal
             Bll.CidadeBLL cidadeBLL = new Bll.CidadeBLL();
             cidadeBLL.insert(cidade);
         }
+
+        public static List<Model.Cidade> select()
+        {
+            Bll.CidadeBLL cidadeBLL = new Bll.CidadeBLL();
+            return cidadeBLL.select();
+        }
     }
 }

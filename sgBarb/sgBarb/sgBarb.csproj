@@ -125,6 +125,7 @@
     <Compile Include="Bll\Conexao.cs" />
     <Compile Include="Bll\UsuarioBLL.cs" />
     <Compile Include="Dal\CidadeDAL.cs" />
+    <Compile Include="Dal\ClienteDAL.cs" />
     <Compile Include="Dal\UsuarioDAL.cs" />
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Cliente.cs" />

@@ -1,4 +1,17 @@
 body {
+  background-image: url('../../Imagens/bkLogin.jpg');
+  background-repeat: no-repeat;
+  background-size:auto 100%;
+  bottom: 0;
+  color: black;
+  left: 0;
+  overflow: auto;
+  padding: 3em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  background-size: cover;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;

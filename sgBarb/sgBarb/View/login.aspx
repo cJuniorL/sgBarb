@@ -14,7 +14,7 @@
         <div class="container">
 
             <div class="form-signin">
-                <h2 class="form-signin-heading">Tela de Login</h2>
+                <h2 class="form-signin-heading" style="color:coral">Login - Barbearia</h2>
                 <label for="inputEmail" class="sr-only">Login</label>
                 <asp:TextBox ID="txtUsuario" type="text" cssClass="form-control" placeholder="Usuário " runat="server" required autofocus></asp:TextBox>
                 <label for="inputPassword" class="sr-only">Password</label>

@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>Cadastro de Cidade</h1>
     <div class="row">
         <div class="form-group col-10">
             <label for="nome">Nome</label>
@@ -18,7 +19,7 @@
             <label for="uf">CEP</label>
             <asp:TextBox ID="txtCep" class="form-control" type="text" runat="server"></asp:TextBox>
         </div>
-    </div>  
+    </div>
     <asp:Button ID="btnCadastrar" class="btn btn-outline-primary" runat="server" Text="Cadastrar" OnClick="btnCadastrar_Click" />
     <asp:Button ID="btnCancelar" class="btn btn-outline-warning" runat="server" Text="Cancelar" />
 </asp:Content>

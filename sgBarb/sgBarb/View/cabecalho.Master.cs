@@ -11,7 +11,10 @@ namespace sgBarb.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["id"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
         }
     }
 }
