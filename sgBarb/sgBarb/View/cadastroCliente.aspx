@@ -72,5 +72,5 @@
         </div>
     </div>
     <asp:Button ID="btnCadastrar" class="btn btn-outline-primary" runat="server" Text="Cadastrar" OnClick="btnCadastrar_Click" />
-    <asp:Button ID="btnCancelar" class="btn btn-outline-warning" runat="server" Text="Cancelar" />
+    <asp:Button ID="btnCancelar" class="btn btn-outline-warning" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
 </asp:Content>

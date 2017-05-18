@@ -115,6 +115,7 @@
     <Content Include="View\Index.aspx" />
     <Content Include="View\indexSite.aspx" />
     <Content Include="View\login.aspx" />
+    <Content Include="View\viewCliente.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -172,6 +173,13 @@
     </Compile>
     <Compile Include="View\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewCliente.aspx.cs">
+      <DependentUpon>viewCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewCliente.aspx.designer.cs">
+      <DependentUpon>viewCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -12,5 +12,11 @@ namespace sgBarb.Dal
             Bll.ClienteBLL clienteBLL = new Bll.ClienteBLL();
             clienteBLL.insert(cliente);
         }
+
+        public static List<Model.Cliente> select()
+        {
+            Bll.ClienteBLL clienteBLL = new Bll.ClienteBLL();
+            return clienteBLL.select();
+        }
     }
 }

@@ -14,14 +14,8 @@ namespace sgBarb.Bll
             Conexao conexao = new Bll.Conexao();
             SqlCommand command = new SqlCommand(sql, conexao.getConexao());
             commandAdd(command, cliente);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException)
-            {
-               //...
-            }
+
+            command.ExecuteNonQuery();
             conexao.Dispose();
         }
 
@@ -73,7 +67,7 @@ namespace sgBarb.Bll
         public void commandAdd(SqlCommand command, Model.Cliente cliente)
         {
             command.Parameters.AddWithValue("nome", cliente.nome);
-            command.Parameters.AddWithValue("sexo", cliente.sexo);
+            command.Parameters.AddWithValue("sexo", Convert.ToInt32(cliente.sexo));
             command.Parameters.AddWithValue("telefone", cliente.telefone);
             command.Parameters.AddWithValue("celular", cliente.celular);
             command.Parameters.AddWithValue("nascimento", cliente.nascimento);

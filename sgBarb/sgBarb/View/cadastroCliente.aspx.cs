@@ -56,5 +56,10 @@ namespace sgBarb.View
             Dal.ClienteDAL.insert(getCliente());
 
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("indexSite.aspx");
+        }
     }
 }
