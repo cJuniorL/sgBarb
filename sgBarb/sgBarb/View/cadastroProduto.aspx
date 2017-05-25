@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/cabecalho.Master" AutoEventWireup="true" CodeBehind="cadastroProduto.aspx.cs" Inherits="sgBarb.View.cadastroProduto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        $('#<%=txtDescricao.ClientID%>')
+        .focusout(function() {
+            focus++;
+            $('#<%=txtDescricao.ClientID%>').text("batata");
+        })
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -65,5 +72,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

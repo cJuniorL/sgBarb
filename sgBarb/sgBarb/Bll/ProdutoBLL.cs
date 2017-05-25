@@ -28,6 +28,48 @@ namespace sgBarb.Bll
             }
         }
 
+        public void update(Model.Produto produto)
+        {
+            string sql = "UPDATE produto SET descr=@descr, valorVenda=@valorVenda, quantidade=@quantidade, tipoProdutoID=@tipoProdutoID where id=@id";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            addParameter(command, produto);
+            command.Parameters.AddWithValue("id", produto.id);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.Write("Erro na edição de produto");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+        }
+
+        public void delete(int produtoID)
+        {
+            string sql = "DELETE produto where id=@id";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            command.Parameters.AddWithValue("id", produtoID);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro na remoção de Produto");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+
+        }
+
         public List<Model.Produto> select()
         {
             List<Model.Produto> lstProduto = new List<Model.Produto>();
@@ -51,6 +93,30 @@ namespace sgBarb.Bll
                 conexao.Dispose();
             }
             return lstProduto;
+        }
+
+        public Model.Produto selectByID(int idProduto)
+        {
+            Model.Produto produto = new Model.Produto();
+            string sql = "SELECT * FROM produto where id=@idProduto";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            command.Parameters.AddWithValue("idProduto", idProduto);
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                reader.Read();
+                produto = getProduto(reader);
+            }
+            catch
+            {
+                Console.WriteLine("Erro na seleção de produto");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+            return produto;
         }
 
         private Model.Produto getProduto(SqlDataReader reader)

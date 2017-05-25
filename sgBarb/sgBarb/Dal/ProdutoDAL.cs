@@ -22,7 +22,19 @@ namespace sgBarb.Dal
         public static void update(Model.Produto produto)
         {
             Bll.ProdutoBLL produtoBll = new Bll.ProdutoBLL();
-            //produtoBll.update(produto);
+            produtoBll.update(produto);
+        }
+
+        public static void delete(int produtoID)
+        {
+            Bll.ProdutoBLL produtoBLL = new Bll.ProdutoBLL();
+            produtoBLL.delete(produtoID);
+        }
+
+        public static Model.Produto selectByID(int produtoID)
+        {
+            Bll.ProdutoBLL produtoBLL = new Bll.ProdutoBLL();
+            return produtoBLL.selectByID(produtoID);    
         }
     }
 }

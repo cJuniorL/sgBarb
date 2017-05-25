@@ -14,7 +14,25 @@ namespace sgBarb.View
             if (!IsPostBack)
             {
                 configurarDropDownProduto();
+                if (verificarEditarInserir())
+                {
+                    carregarProduto();
+                }
             }
+        }
+
+        private void carregarProduto()
+        {
+            Model.Produto produto = Dal.ProdutoDAL.selectByID(Convert.ToInt32(Request.QueryString["id"]));
+            txtDescricao.Text = produto.descr;
+            txtEstoque.Text = produto.quantidade.ToString();
+            txtValor.Text = produto.valorVenda.ToString("0.00");
+            ddlTipoProduto.SelectedValue = produto.tipoProdutoID.ToString();
+        }
+
+        private bool verificarEditarInserir() //true = edit | false = inserir
+        {
+            return Request.QueryString["id"] != null;
         }
 
 
@@ -45,7 +63,11 @@ namespace sgBarb.View
 
         private Model.Produto getProduto()
         {
-            Model.Produto produto = new Model.Produto();
+            Model.Produto produto;
+            if (verificarEditarInserir())
+                produto = Dal.ProdutoDAL.selectByID(Convert.ToInt32(Request.QueryString["id"]));
+            else
+                produto = new Model.Produto();
             produto.descr = txtDescricao.Text;
             produto.valorVenda = Convert.ToSingle(txtValor.Text);
             produto.quantidade = Convert.ToInt32(txtEstoque.Text);
@@ -63,7 +85,11 @@ namespace sgBarb.View
             Model.Produto produto = getProduto();
             if (produto != null)
             {
-                Dal.ProdutoDAL.insert(produto);
+                if (verificarEditarInserir())
+                    Dal.ProdutoDAL.update(produto);
+                else
+                    Dal.ProdutoDAL.insert(produto);
+                Response.Redirect("viewProduto.aspx");
             }
         }
 

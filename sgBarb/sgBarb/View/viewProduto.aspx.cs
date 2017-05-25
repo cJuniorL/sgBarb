@@ -31,5 +31,36 @@ namespace sgBarb.View
             gdvProduto.DataSource = dados;
             gdvProduto.DataBind();
         }
+
+        protected void gdvProduto_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "RemoverProduto":
+                    removerProduto(Convert.ToInt32(e.CommandArgument));
+                    break;
+                case "EditarProduto":
+                    editarProduto(Convert.ToInt32(e.CommandArgument));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void removerProduto(int produtoID)
+        {
+            Dal.ProdutoDAL.delete(produtoID);
+            carregarGrid();
+        }
+
+        private void editarProduto(int produtoID)
+        {
+            Response.Redirect("cadastroProduto.aspx?id=" + produtoID);
+        }
+
+        protected void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cadastroProduto.aspx");
+        }
     }
 }
