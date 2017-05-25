@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title>Barbearia</title>
-    <link href="../Scripts/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Scripts/css/bootstrap.min.css" rel="stylesheet"/>
     <style>
         body {
             padding-top: 5rem;

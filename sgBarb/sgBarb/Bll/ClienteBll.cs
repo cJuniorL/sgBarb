@@ -19,6 +19,68 @@ namespace sgBarb.Bll
             conexao.Dispose();
         }
 
+        public void update(Model.Cliente cliente)
+        {
+            string sql = "UPDATE cliente SET nome=@nome, sexo=@sexo, telefone=@telefone, celular=@celular, nascimento=@nascimento, cep=@cep,  bairro=@bairro, rua=@rua, num=@num, cpf=@cpf, rg=@rg, email=@email, credito=@credito, observacao=@observacao, cidadeID=@cidadeID WHERE id=@id";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            commandAdd(command, cliente);
+            command.Parameters.AddWithValue("id", cliente.id);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro na atualização de Cliente");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+        }
+
+        public void delete(int clienteID)
+        {
+            string sql = "DELETE cliente where id=@id";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            command.Parameters.AddWithValue("id", clienteID);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Erro na remoção de Cliente");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+
+        }
+
+        public Model.Cliente selectById(int clienteID)
+        {
+            string sql = "SELECT * FROM CLIENTE WHERE ID=@id";
+            Model.Cliente cliente = new Model.Cliente();
+            Conexao conexao = new Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            command.Parameters.AddWithValue("id", clienteID);
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                reader.Read();
+                cliente = getReaderCliente(reader);
+            }
+            catch
+            {
+                Console.WriteLine("Erro na seleção de cliente");
+            }
+            return cliente;
+        }
+
         public List<Model.Cliente> select()
         {
             List<Model.Cliente> lstCliente = new List<Model.Cliente>();
@@ -31,6 +93,32 @@ namespace sgBarb.Bll
                 while (reader.Read())
                 {
                     lstCliente.Add(getReaderCliente(reader));
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Deu erro na seleção de Genero...");
+            }
+            conexao.Dispose();
+
+            return (lstCliente);
+        }
+
+        public List<Model.Cliente> selectIdNome()
+        {
+            List<Model.Cliente> lstCliente = new List<Model.Cliente>();
+            string sql = "SELECT id, nome FROM CLIENTE";
+            Conexao conexao = new Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    Model.Cliente cliente = new Model.Cliente();
+                    cliente.id = Convert.ToInt32(reader["id"]);
+                    cliente.nome = Convert.ToString(reader["nome"]);
+                    lstCliente.Add(cliente);
                 }
             }
             catch
