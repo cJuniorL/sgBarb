@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -111,14 +112,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="View\cadastrarFornecedor.aspx" />
     <Content Include="View\cadastroCidade.aspx" />
     <Content Include="View\cadastroCliente.aspx" />
     <Content Include="View\cadastroFuncionario.aspx" />
     <Content Include="View\cadastroProduto.aspx" />
+    <Content Include="View\entradaProduto.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\indexSite.aspx" />
     <Content Include="View\login.aspx" />
     <Content Include="View\viewCliente.aspx" />
+    <Content Include="View\viewEmpresa.aspx" />
+    <Content Include="View\viewFornecedor.aspx" />
     <Content Include="View\viewFuncionario.aspx" />
     <Content Include="View\viewProduto.aspx" />
     <Content Include="Web.config">
@@ -129,7 +134,10 @@
     <Compile Include="Bll\Agenda.cs" />
     <Compile Include="Bll\CidadeBLL.cs" />
     <Compile Include="Bll\ClienteBLL.cs" />
+    <Compile Include="Bll\CompraBll.cs" />
     <Compile Include="Bll\Conexao.cs" />
+    <Compile Include="Bll\EntradaProdutoBLL.cs" />
+    <Compile Include="Bll\FornecedorBLL.cs" />
     <Compile Include="Bll\FuncionarioBLL.cs" />
     <Compile Include="Bll\ProdutoBLL.cs" />
     <Compile Include="Bll\TipoProdutoBLL.cs" />
@@ -137,6 +145,9 @@
     <Compile Include="Dal\AgendaDAL.cs" />
     <Compile Include="Dal\CidadeDAL.cs" />
     <Compile Include="Dal\ClienteDAL.cs" />
+    <Compile Include="Dal\CompraDAL.cs" />
+    <Compile Include="Dal\EntradaProdutoDAL.cs" />
+    <Compile Include="Dal\FornecedorDAL.cs" />
     <Compile Include="Dal\FuncionarioDAL.cs" />
     <Compile Include="Dal\ProdutoDAL.cs" />
     <Compile Include="Dal\TipoProdutoDAL.cs" />
@@ -145,6 +156,9 @@
     <Compile Include="Model\Agenda.cs" />
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Compra.cs" />
+    <Compile Include="Model\EntradaProduto.cs" />
+    <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\TipoProduto.cs" />
@@ -163,6 +177,13 @@
     </Compile>
     <Compile Include="View\cabecalho.Master.designer.cs">
       <DependentUpon>cabecalho.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\cadastrarFornecedor.aspx.cs">
+      <DependentUpon>cadastrarFornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\cadastrarFornecedor.aspx.designer.cs">
+      <DependentUpon>cadastrarFornecedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\cadastroCidade.aspx.cs">
       <DependentUpon>cadastroCidade.aspx</DependentUpon>
@@ -192,6 +213,13 @@
     <Compile Include="View\cadastroProduto.aspx.designer.cs">
       <DependentUpon>cadastroProduto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\entradaProduto.aspx.cs">
+      <DependentUpon>entradaProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\entradaProduto.aspx.designer.cs">
+      <DependentUpon>entradaProduto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +247,20 @@
     </Compile>
     <Compile Include="View\viewCliente.aspx.designer.cs">
       <DependentUpon>viewCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewEmpresa.aspx.cs">
+      <DependentUpon>viewEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewEmpresa.aspx.designer.cs">
+      <DependentUpon>viewEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewFornecedor.aspx.cs">
+      <DependentUpon>viewFornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewFornecedor.aspx.designer.cs">
+      <DependentUpon>viewFornecedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\viewFuncionario.aspx.cs">
       <DependentUpon>viewFuncionario.aspx</DependentUpon>

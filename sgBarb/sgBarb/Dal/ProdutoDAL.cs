@@ -36,5 +36,11 @@ namespace sgBarb.Dal
             Bll.ProdutoBLL produtoBLL = new Bll.ProdutoBLL();
             return produtoBLL.selectByID(produtoID);    
         }
+
+        public static List<Model.Produto> selectIdDescrByIdTipo(int tipoPodutoID)
+        {
+            Bll.ProdutoBLL produtoBLL = new Bll.ProdutoBLL();
+            return produtoBLL.selectIdDescrByIdTipo(tipoPodutoID);
+        }
     }
 }

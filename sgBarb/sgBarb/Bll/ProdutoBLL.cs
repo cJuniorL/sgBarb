@@ -35,18 +35,18 @@ namespace sgBarb.Bll
             SqlCommand command = new SqlCommand(sql, conexao.getConexao());
             addParameter(command, produto);
             command.Parameters.AddWithValue("id", produto.id);
-            try
-            {
+            //try
+            //{
                 command.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.Write("Erro na edição de produto");
-            }
-            finally
-            {
+            //}
+            //catch
+            //{
+            //    Console.Write("Erro na edição de produto");
+            //}
+            //finally
+            //{
                 conexao.Dispose();
-            }
+            //}
         }
 
         public void delete(int produtoID)
@@ -82,6 +82,35 @@ namespace sgBarb.Bll
                 while (reader.Read())
                 {
                     lstProduto.Add(getProduto(reader));
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Erro na seleção de produto");
+            }
+            finally
+            {
+                conexao.Dispose();
+            }
+            return lstProduto;
+        }
+
+        public List<Model.Produto> selectIdDescrByIdTipo(int tipoPodutoID)
+        {
+            List<Model.Produto> lstProduto = new List<Model.Produto>();
+            string sql = "SELECT * FROM produto where tipoProdutoID=@tipoProdutoID";
+            Conexao conexao = new Bll.Conexao();
+            SqlCommand command = new SqlCommand(sql, conexao.getConexao());
+            command.Parameters.AddWithValue("tipoProdutoID", tipoPodutoID);
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                while (reader.Read())
+                {
+                    Model.Produto produto = new Model.Produto();
+                    produto.id = Convert.ToInt32(reader["id"]);
+                    produto.descr = Convert.ToString(reader["descr"]);
+                    lstProduto.Add(produto);
                 }
             }
             catch
