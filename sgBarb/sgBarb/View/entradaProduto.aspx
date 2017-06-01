@@ -25,7 +25,6 @@
                 <ItemTemplate>
                     <asp:Label ID="lblQuantidadeDgv" runat="server" Text='<%# Eval("quantidade") %>'></asp:Label>
                 </ItemTemplate>
-
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Valor Uni.">
                 <ItemTemplate>

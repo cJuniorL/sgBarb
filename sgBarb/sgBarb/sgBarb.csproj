@@ -117,6 +117,7 @@
     <Content Include="View\cadastroCliente.aspx" />
     <Content Include="View\cadastroFuncionario.aspx" />
     <Content Include="View\cadastroProduto.aspx" />
+    <Content Include="View\cadastroServico.aspx" />
     <Content Include="View\entradaProduto.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\indexSite.aspx" />
@@ -126,6 +127,7 @@
     <Content Include="View\viewFornecedor.aspx" />
     <Content Include="View\viewFuncionario.aspx" />
     <Content Include="View\viewProduto.aspx" />
+    <Content Include="View\viewServico.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -140,6 +142,7 @@
     <Compile Include="Bll\FornecedorBLL.cs" />
     <Compile Include="Bll\FuncionarioBLL.cs" />
     <Compile Include="Bll\ProdutoBLL.cs" />
+    <Compile Include="Bll\ServicoBLL.cs" />
     <Compile Include="Bll\TipoProdutoBLL.cs" />
     <Compile Include="Bll\UsuarioBLL.cs" />
     <Compile Include="Dal\AgendaDAL.cs" />
@@ -150,6 +153,7 @@
     <Compile Include="Dal\FornecedorDAL.cs" />
     <Compile Include="Dal\FuncionarioDAL.cs" />
     <Compile Include="Dal\ProdutoDAL.cs" />
+    <Compile Include="Dal\SerivcoDAL.cs" />
     <Compile Include="Dal\TipoProdutoDAL.cs" />
     <Compile Include="Dal\UsuarioDAL.cs" />
     <Compile Include="Funcoes\InputTimeBootstrap.cs" />
@@ -161,6 +165,7 @@
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Servico.cs" />
     <Compile Include="Model\TipoProduto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +217,13 @@
     </Compile>
     <Compile Include="View\cadastroProduto.aspx.designer.cs">
       <DependentUpon>cadastroProduto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\cadastroServico.aspx.cs">
+      <DependentUpon>cadastroServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\cadastroServico.aspx.designer.cs">
+      <DependentUpon>cadastroServico.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\entradaProduto.aspx.cs">
       <DependentUpon>entradaProduto.aspx</DependentUpon>
@@ -275,6 +287,13 @@
     </Compile>
     <Compile Include="View\viewProduto.aspx.designer.cs">
       <DependentUpon>viewProduto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewServico.aspx.cs">
+      <DependentUpon>viewServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewServico.aspx.designer.cs">
+      <DependentUpon>viewServico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
