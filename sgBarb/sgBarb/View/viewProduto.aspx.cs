@@ -62,5 +62,10 @@ namespace sgBarb.View
         {
             Response.Redirect("cadastroProduto.aspx");
         }
+
+        protected void btnRelProduto_Click(object sender, EventArgs e)
+        {
+            Funcoes.Relatorios.listarProduto();
+        }
     }
 }

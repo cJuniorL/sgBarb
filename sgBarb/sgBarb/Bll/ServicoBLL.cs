@@ -62,7 +62,11 @@ namespace sgBarb.Bll
                 SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
                 while (reader.Read())
                 {
-                    lstServico.Add(getServico(reader));
+                    Model.Servico servico = new Model.Servico();
+                    servico.id = Convert.ToInt32(reader["id"]);
+                    servico.descr = Convert.ToString(reader["descr"]);
+                    servico.valor = Convert.ToSingle(reader["valor"]);
+                    lstServico.Add(servico);
                 }
             }
             catch
@@ -73,17 +77,9 @@ namespace sgBarb.Bll
             {
                 conexao.Dispose();
             }
-            return lstServico;
+           return lstServico;
         }
 
-        public Model.Servico getServico(SqlDataReader reader)
-        {
-            Model.Servico servico = new Model.Servico();
-            servico.id = Convert.ToInt32(reader["id"]);
-            servico.descr = Convert.ToString(reader["descr"]);
-            servico.valor = Convert.ToSingle(reader["valor"]);
-            return servico;
-        }
 
         public Model.Servico selectByID(int id)
         {
@@ -95,7 +91,9 @@ namespace sgBarb.Bll
             {
                 SqlDataReader reader = command.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
                 reader.Read();
-                servico = getServico(reader);
+                servico.id = Convert.ToInt32(reader["id"]);
+                servico.descr = Convert.ToString(reader["descr"]);
+                servico.valor = Convert.ToSingle(reader["valor"]);
             }
             catch
             {
@@ -107,5 +105,6 @@ namespace sgBarb.Bll
             }
             return servico;
         }
+        
     }
 }

@@ -25,5 +25,6 @@
         </Columns>
     </asp:GridView>
     <asp:Button ID="btnAdicionar" CssClass="btn btn-outline-primary" runat="server" Text="Novo Produto" OnClick="btnAdicionar_Click"/>
-
+    <asp:Button ID="btnRelProduto" class="btn btn-outline-primary float-right" runat="server" Text="Relação de Produto" OnClick="btnRelProduto_Click"/>
+    
 </asp:Content>

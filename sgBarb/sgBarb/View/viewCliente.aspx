@@ -23,6 +23,12 @@
                             Text="Remover" CommandArgument='<%# Eval("id") %>' />
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:Button ID="btnVis" CssClass="btn btn-outline-primary" runat="server" CausesValidation="false" CommandName="VisualizarCliente"
+                            Text="Visualizar" CommandArgument='<%# Eval("id") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
     </div>

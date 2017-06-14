@@ -12,5 +12,17 @@ namespace sgBarb.Dal
             Bll.Agenda bllAgenda = new Bll.Agenda();
             bllAgenda.insert(agenda);
         }
+
+        public static List<Model.Agenda> select()
+        {
+            Bll.Agenda bllAgenda = new Bll.Agenda();
+            return bllAgenda.select();
+        }
+
+        public static void remove(int agendaID)
+        {
+            Bll.Agenda bllAgenda = new Bll.Agenda();
+            bllAgenda.remove(agendaID);
+        }
     }
 }

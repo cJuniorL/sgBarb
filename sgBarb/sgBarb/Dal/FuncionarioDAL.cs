@@ -42,5 +42,6 @@ namespace sgBarb.Dal
             Bll.FuncionarioBLL funcionarioBLL = new Bll.FuncionarioBLL();
             funcionarioBLL.update(funcionario);
         }
+
     }
 }

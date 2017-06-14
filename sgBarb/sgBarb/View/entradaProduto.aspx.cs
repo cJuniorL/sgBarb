@@ -266,5 +266,10 @@ namespace sgBarb.View
                 Dal.EntradaProdutoDAL.insert(entradaProduto);
             }
         }
+
+        protected void ddlTipoProduto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

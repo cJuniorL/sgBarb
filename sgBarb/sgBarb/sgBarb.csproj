@@ -121,37 +121,61 @@
     <Content Include="View\entradaProduto.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\indexSite.aspx" />
+    <Content Include="View\inserirImagem.aspx" />
+    <Content Include="View\itensComanda.aspx" />
     <Content Include="View\login.aspx" />
     <Content Include="View\viewCliente.aspx" />
+    <Content Include="View\viewComanda.aspx" />
+    <Content Include="View\viewCompra.aspx" />
     <Content Include="View\viewEmpresa.aspx" />
     <Content Include="View\viewFornecedor.aspx" />
     <Content Include="View\viewFuncionario.aspx" />
+    <Content Include="View\viewImagem.aspx" />
     <Content Include="View\viewProduto.aspx" />
     <Content Include="View\viewServico.aspx" />
+    <Content Include="View\visualizarCompra.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bll\Agenda.cs" />
+    <Compile Include="Bll\CaixaBLL.cs" />
     <Compile Include="Bll\CidadeBLL.cs" />
     <Compile Include="Bll\ClienteBLL.cs" />
+    <Compile Include="Bll\ComandaBLL.cs" />
+    <Compile Include="Bll\ComandaCaixa.cs" />
     <Compile Include="Bll\CompraBll.cs" />
     <Compile Include="Bll\Conexao.cs" />
     <Compile Include="Bll\EntradaProdutoBLL.cs" />
     <Compile Include="Bll\FornecedorBLL.cs" />
+    <Compile Include="Bll\FotoBLL.cs" />
     <Compile Include="Bll\FuncionarioBLL.cs" />
     <Compile Include="Bll\ProdutoBLL.cs" />
+    <Compile Include="Bll\ProdutoComandaBLL.cs" />
     <Compile Include="Bll\ServicoBLL.cs" />
+    <Compile Include="Bll\ServicoComandaBLL.cs" />
     <Compile Include="Bll\TipoProdutoBLL.cs" />
     <Compile Include="Bll\UsuarioBLL.cs" />
     <Compile Include="Dal\AgendaDAL.cs" />
+    <Compile Include="Dal\CaixaDal.cs" />
     <Compile Include="Dal\CidadeDAL.cs" />
     <Compile Include="Dal\ClienteDAL.cs" />
+    <Compile Include="Dal\ComandaCaixa.cs" />
+    <Compile Include="Dal\ComandaDAL.cs" />
+    <Compile Include="Dal\ProdutoComandaDAL.cs" />
+    <Compile Include="Dal\ServicoComanda.cs" />
+    <Compile Include="Funcoes\Relatorios.cs" />
+    <Compile Include="Model\Caixa.cs" />
+    <Compile Include="Model\Comanda.cs" />
     <Compile Include="Dal\CompraDAL.cs" />
     <Compile Include="Dal\EntradaProdutoDAL.cs" />
     <Compile Include="Dal\FornecedorDAL.cs" />
+    <Compile Include="Dal\FotoDal.cs" />
     <Compile Include="Dal\FuncionarioDAL.cs" />
+    <Compile Include="Model\ComandaCaixa.cs" />
+    <Compile Include="Model\ComandaServico.cs" />
+    <Compile Include="Model\ProdutoComanda.cs" />
     <Compile Include="Dal\ProdutoDAL.cs" />
     <Compile Include="Dal\SerivcoDAL.cs" />
     <Compile Include="Dal\TipoProdutoDAL.cs" />
@@ -163,9 +187,11 @@
     <Compile Include="Model\Compra.cs" />
     <Compile Include="Model\EntradaProduto.cs" />
     <Compile Include="Model\Fornecedor.cs" />
+    <Compile Include="Model\Foto.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Servico.cs" />
+    <Compile Include="Model\ServicoComanda.cs" />
     <Compile Include="Model\TipoProduto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,6 +272,20 @@
     <Compile Include="View\indexSite.aspx.designer.cs">
       <DependentUpon>indexSite.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\inserirImagem.aspx.cs">
+      <DependentUpon>inserirImagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\inserirImagem.aspx.designer.cs">
+      <DependentUpon>inserirImagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\itensComanda.aspx.cs">
+      <DependentUpon>itensComanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\itensComanda.aspx.designer.cs">
+      <DependentUpon>itensComanda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,6 +299,20 @@
     </Compile>
     <Compile Include="View\viewCliente.aspx.designer.cs">
       <DependentUpon>viewCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewComanda.aspx.cs">
+      <DependentUpon>viewComanda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewComanda.aspx.designer.cs">
+      <DependentUpon>viewComanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\viewCompra.aspx.cs">
+      <DependentUpon>viewCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewCompra.aspx.designer.cs">
+      <DependentUpon>viewCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\viewEmpresa.aspx.cs">
       <DependentUpon>viewEmpresa.aspx</DependentUpon>
@@ -281,6 +335,13 @@
     <Compile Include="View\viewFuncionario.aspx.designer.cs">
       <DependentUpon>viewFuncionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\viewImagem.aspx.cs">
+      <DependentUpon>viewImagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\viewImagem.aspx.designer.cs">
+      <DependentUpon>viewImagem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\viewProduto.aspx.cs">
       <DependentUpon>viewProduto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,6 +355,13 @@
     </Compile>
     <Compile Include="View\viewServico.aspx.designer.cs">
       <DependentUpon>viewServico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\visualizarCompra.aspx.cs">
+      <DependentUpon>visualizarCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\visualizarCompra.aspx.designer.cs">
+      <DependentUpon>visualizarCompra.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

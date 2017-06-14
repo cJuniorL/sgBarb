@@ -42,6 +42,9 @@ namespace sgBarb.View
                 case "EditarCliente":
                     editarCliente(Convert.ToInt32(e.CommandArgument));
                     break;
+                case "VisualizarCliente":
+                    Funcoes.Relatorios.relatorioCliente(Convert.ToInt32(e.CommandArgument));
+                    break;
                 default:
                     break;
             }

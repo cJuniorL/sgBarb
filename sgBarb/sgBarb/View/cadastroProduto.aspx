@@ -1,13 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/cabecalho.Master" AutoEventWireup="true" CodeBehind="cadastroProduto.aspx.cs" Inherits="sgBarb.View.cadastroProduto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
-        $('#<%=txtDescricao.ClientID%>')
-        .focusout(function() {
-            focus++;
-            $('#<%=txtDescricao.ClientID%>').text("batata");
-        })
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -48,7 +41,7 @@
     </div>
     <asp:Button ID="btnCadastrar" class="btn btn-outline-primary" runat="server" Text="Cadastrar" OnClick="btnCadastrar_Click" />
     <asp:Button ID="btnCancelar" class="btn btn-outline-warning" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
-
+    
     <div class="modal fade" id="tipoProduto" tabindex="-1" role="dialog" aria-labelledby="novoTipoProduto" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

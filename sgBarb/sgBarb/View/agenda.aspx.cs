@@ -13,8 +13,10 @@ namespace sgBarb.View
         {
             if (!IsPostBack)
             {
+                Funcoes.Relatorios.listarProduto();
                 configuarDropDown();
                 txtData.Text = Funcoes.InputTimeBootstrap.getInputDate(DateTime.Today);
+                txtDia.Text = Funcoes.InputTimeBootstrap.getInputDate(DateTime.Today);
             }
         }
 
@@ -24,8 +26,12 @@ namespace sgBarb.View
             ddlCliente.DataTextField = "nome";
             ddlFuncionario.DataValueField = "id";
             ddlFuncionario.DataTextField = "nome";
+            ddlFuncionarioInicio.DataValueField = "id";
+            ddlFuncionarioInicio.DataTextField = "nome";
             ddlCliente.DataSource = Dal.ClienteDAL.selectIdNome();
             ddlCliente.DataBind();
+            ddlFuncionarioInicio.DataSource = Dal.FuncionarioDAL.selectIdNome();
+            ddlFuncionarioInicio.DataBind();
             ddlFuncionario.DataSource = Dal.FuncionarioDAL.selectIdNome();
             ddlFuncionario.DataBind();
         }
@@ -44,8 +50,8 @@ namespace sgBarb.View
         {
             Model.Agenda agenda = new Model.Agenda();
             agenda.data = Convert.ToDateTime(txtData.Text);
-            agenda.horarioInicio = Convert.ToDateTime(txtHorario.Text);
-            agenda.duracao = Convert.ToDateTime(txtDuracao.Text);
+            agenda.horarioInicio = txtHorario.Text;
+            agenda.duracao = txtDuracao.Text;
             agenda.encaixe = ckbEncaixe.Checked;
             agenda.funcionarioID = Convert.ToInt32(ddlFuncionario.SelectedValue);
             agenda.clienteID = Convert.ToInt32(ddlCliente.SelectedValue);
@@ -74,6 +80,21 @@ namespace sgBarb.View
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             limparCampos();
+        }
+
+        protected void btnRemover_Click(object sender, EventArgs e)
+        {
+            Dal.AgendaDAL.remove(Convert.ToInt32(idAgenda.Value));
+        }
+
+        protected void btnRecarregarAgenda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

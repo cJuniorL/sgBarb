@@ -12,5 +12,11 @@ namespace sgBarb.Dal
             Bll.EntradaProdutoBLL entraProdutoBLL = new Bll.EntradaProdutoBLL();
             entraProdutoBLL.insert(entradaProduto);
         }
+
+        public static List<Model.EntradaProduto> selectCompraID(int compraID)
+        {
+            Bll.EntradaProdutoBLL entradaProdutBLL = new Bll.EntradaProdutoBLL();
+            return entradaProdutBLL.selectCompraID(compraID);
+        }
     }
 }

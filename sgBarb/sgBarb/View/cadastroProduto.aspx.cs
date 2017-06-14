@@ -100,5 +100,6 @@ namespace sgBarb.View
         {
             Response.Redirect("viewProduto.aspx");
         }
+
     }
 }

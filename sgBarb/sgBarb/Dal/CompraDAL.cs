@@ -12,5 +12,17 @@ namespace sgBarb.Dal
             Bll.CompraBll compraBLL = new Bll.CompraBll();
             return compraBLL.insert(compra);
         }
+
+        public static List<Model.Compra> select()
+        {
+            Bll.CompraBll compraBLL = new Bll.CompraBll();
+            return compraBLL.select();
+        }
+
+        public static Model.Compra selectByID(int compraID)
+        {
+            Bll.CompraBll compraBLL = new Bll.CompraBll();
+            return compraBLL.selectById(compraID);
+        }
     }
 }
